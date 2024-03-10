@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RestaurantsService } from './restaurants.service';
 import { Restaurant } from './restaurant.model';
 
@@ -8,6 +8,7 @@ import { Restaurant } from './restaurant.model';
   styleUrls: ['./restaurants.component.css'],
 })
 export class RestaurantsComponent implements OnInit {
+  @Input() searchText: string;
   restaurants: Restaurant[] = [];
   isLoading: boolean = false;
 

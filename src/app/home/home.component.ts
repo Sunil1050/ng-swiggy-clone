@@ -13,8 +13,17 @@ export class HomeComponent implements OnInit {
   carouselApi: any = {};
   isLoading: boolean = false;
   sortType: string = 'Lowest'
-  
+  searchText: string = '';
+
   constructor(private dataStorage: DataStorageService, private restaurantService: RestaurantsService) {}
+
+  ngOnInit(): void {
+    this.isLoading = true;
+    this.dataStorage.getListOffers().subscribe((res) => {
+      this.isLoading = false;
+      this.carouselApi = res;
+    });
+  }
 
   onClickLowest() {
     this.sortType = 'Lowest'
@@ -25,12 +34,4 @@ export class HomeComponent implements OnInit {
     this.sortType = 'Highest';
     this.restaurantService.setSortType(this.sortType);
   };
-
-  ngOnInit(): void {
-    this.isLoading = true;
-    this.dataStorage.getListOffers().subscribe((res) => {
-      this.isLoading = false;
-      this.carouselApi = res;
-    });
-  }
 }
