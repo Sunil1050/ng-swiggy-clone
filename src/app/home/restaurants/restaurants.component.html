@@ -1,9 +1,16 @@
 <div class="restaurants-box">
-    <!-- <div > -->
+    <ng-container *ngIf="(restaurants | filter: searchText).length > 0; else notFound">
         <ul [style]="{listStyleType: 'none'}" class="restaurants-list" *ngIf="!isLoading; else loader">
-            <app-restaurant-item [restaurant]="restaurant" *ngFor="let restaurant of restaurants"></app-restaurant-item>
+            <app-restaurant-item [restaurant]="restaurant"
+                *ngFor="let restaurant of restaurants | filter : searchText"></app-restaurant-item>
         </ul>
-    <!-- </div> -->
+    </ng-container>
+    <ng-template #notFound>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="../../../assets/IMG/search-icon.png" alt="not found" class='no-search-found' />
+                <h1 class='no-search-text'>No Search Results found !</h1>
+        </div>
+    </ng-template>
     <ng-template #loader>
         <div class="d-flex justify-content-center">
             <app-loader></app-loader>

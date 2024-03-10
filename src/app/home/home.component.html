@@ -10,7 +10,13 @@
             </ng-template>
         </div>
         <div class="home-body">
-            <h1 class="popular-rest-text">Popular Restaurants</h1>
+            <div class="d-flex justify-content-between">
+                <h1 class="popular-rest-text">Popular Restaurants</h1>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search Restaurants..." [(ngModel)]="searchText" />
+                    <i class="bi bi-search search-icon"></i>
+                </div>
+            </div>
             <div class="caption-filter-box">
                 <h3 class='caption'>Select your favourite restaurant special dish and make your day happy...</h3>
                 <!-- Pop up Should be Added here -->
@@ -21,8 +27,10 @@
                 </div>
                 <ng-template #popContent>
                     <div className='filter-popup'>
-                        <h3 (click)="onClickLowest()" [ngClass]="sortType === 'Lowest' ? 'sort-option selected' : 'sort-option'">Lowest</h3>
-                        <h3 (click)="onClickHighest()" [ngClass]="sortType === 'Highest' ? 'sort-option selected' : 'sort-option'">Highest</h3>
+                        <h3 (click)="onClickLowest()"
+                            [ngClass]="sortType === 'Lowest' ? 'sort-option selected' : 'sort-option'">Lowest</h3>
+                        <h3 (click)="onClickHighest()"
+                            [ngClass]="sortType === 'Highest' ? 'sort-option selected' : 'sort-option'">Highest</h3>
                     </div>
                 </ng-template>
 
@@ -31,7 +39,7 @@
             </div>
             <hr class='hr-rule' />
             <!-- List of Restaurants -->
-            <app-restaurants></app-restaurants>
+            <app-restaurants [searchText]="searchText"></app-restaurants>
             <!-- Pagination Logic -->
             <app-pagination></app-pagination>
         </div>
