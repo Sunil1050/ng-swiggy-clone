@@ -17,10 +17,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(formData: NgForm) {
-    console.log('FOrm Submitted !', formData);
     const { username, password } = formData.value;
     this.authService.loginUser(username, password).subscribe((res) => {
-      console.log('API response: ', res, typeof res);
       this.router.navigate([''])
     });
   }

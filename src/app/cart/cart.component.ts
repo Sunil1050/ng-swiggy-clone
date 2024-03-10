@@ -31,6 +31,7 @@ export class CartComponent implements OnInit {
   }
 
   onPlaceOrder() {
+    this.cartListService.emptyCartList();
     this.router.navigate(['payment/success']);
   }
 }

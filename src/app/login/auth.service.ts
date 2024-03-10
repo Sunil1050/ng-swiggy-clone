@@ -12,7 +12,6 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   loginUser(username: string, password: string) {
-    console.log('At auth service: ', { username, password });
     return this.http
       .post<{ jwt_token: string }>(
         'https://apis.ccbp.in/login',

@@ -38,7 +38,6 @@ export class CartService {
       }
       return item;
     });
-    console.log('Updated CartItemList: ', this.cartList);
     this.cartListChanged.next(this.cartList.slice());
   }
 
