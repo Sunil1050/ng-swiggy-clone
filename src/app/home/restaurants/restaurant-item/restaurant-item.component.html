@@ -1,0 +1,15 @@
+<li class="restaurant-item" routerLink="restaurants-list/{{restaurant?.id}}">
+    <img [src]="restaurant.image_url" alt="restaurant-img" class="rest-image" />
+    <div class="rest-details">
+        <h1 class="rest-name">{{ restaurant.name }}</h1>
+        <h3 class="rest-type">{{ restaurant.cuisine }}</h3>
+        <div class="rating-box">
+            <i class="bi bi-star-fill" [ngStyle]="{'color': restaurant.user_rating.rating_color}"></i>
+            <span class="rating">{{ restaurant.user_rating.rating }}</span>
+            <span class="total-ratings">
+                {{ restaurant.user_rating.total_reviews }} ratings
+            </span>
+        </div>
+    </div>
+</li>
+<!-- [color]="user_rating.rating_color" -->

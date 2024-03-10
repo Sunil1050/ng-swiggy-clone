@@ -1,0 +1,12 @@
+<div class="restaurants-box">
+    <!-- <div > -->
+        <ul [style]="{listStyleType: 'none'}" class="restaurants-list" *ngIf="!isLoading; else loader">
+            <app-restaurant-item [restaurant]="restaurant" *ngFor="let restaurant of restaurants"></app-restaurant-item>
+        </ul>
+    <!-- </div> -->
+    <ng-template #loader>
+        <div class="d-flex justify-content-center">
+            <app-loader></app-loader>
+        </div>
+    </ng-template>
+</div>

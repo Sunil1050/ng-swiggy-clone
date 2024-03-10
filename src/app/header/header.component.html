@@ -1,0 +1,76 @@
+<div class='nav-bar'>
+    <div class='responsive-box'>
+        <div routerLink=""
+            [style]="{display: 'flex', flexDirection: 'row', alignItems: 'center', width: '280px', justifyContent: 'space-between', cursor: 'pointer'}">
+            <img src="../../assets/IMG/AppLogo.png" alt="" class='app-logo' />
+            <h1 class='app-title'>Tasty Kitchens</h1>
+        </div>
+        <div class='menu-list-box'>
+            <ul class='nav-list'>
+                <li class="nav-link" [style]="{cursor: 'pointer'}" routerLink="/" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    Home
+                </li>
+                <li class="nav-link d-flex align-items-center" [style]="{cursor: 'pointer'}" routerLink="/cart-list" routerLinkActive="active">
+                    Cart
+                    <span *ngIf="cartList.length > 0">{{ cartList.length }}</span>
+                </li>
+            </ul>
+            <app-modal></app-modal>
+            <!-- <Popup
+                modal
+                class="popup-content"
+                trigger={
+                    <button class='logout-btn'>Logout</button>
+                }>
+                {close => (
+                    <div class='logout-popup-box'>
+                        <h2 class='are-you-sure-text'>Are you sure you want to Logout?</h2>
+                        <div class='buttons-box'>
+                            <button class='btn cancel' onClick={() => close()}>Cancel</button>
+                            <button class='btn confirm' onClick={this.onLogout}>Confirm</button>
+                        </div>
+                    </div>
+                )}
+            </Popup> -->
+        </div>
+    </div>
+    <div class='mob-nav'>
+        <div class='mob-logo-box'>
+            <img src="../../assets/IMG/AppLogo.png" class="mob-app-logo" alt="app-logo" />
+            <h1 class='mob-app-title'>Tasty Kitchens</h1>
+        </div>
+        <!-- {menuIcon} -->
+    </div>
+    <!-- {this.state.menuOpen ? (
+        <div class='menu-list-box'>
+            <ul class='nav-list'>
+                <Link to="/" onClick={this.onHome}>
+                    <li class={homeLinkColor} onClick={this.closeMenu}>Home</li>
+                </Link>
+                <Link to="/cart">
+                    <Badge badgeContent={cartItemsCount} color="success" showZero>
+                        <li class={cartLinkColor} style={{marginRight: "0px"}}>Cart</li>
+                    </Badge>
+                </Link>
+                <Popup
+                    modal
+                    class="popup-content"
+                    trigger={
+                        <button class='logout-btn'>Logout</button>
+                    }>
+                    {close => (
+                        <div class='logout-popup-box'>
+                            <h2 class='are-you-sure-text'>Are you sure you want to Logout?</h2>
+                            <div class='buttons-box'>
+                                <button class='btn cancel' onClick={() => close()}>Cancel</button>
+                                <button class='btn confirm' onClick={this.onLogout}>Confirm</button>
+                            </div>
+                        </div>
+                    )}
+                </Popup>
+            </ul>
+            <IoIosCloseCircle class='mob-menu-close-icon' onClick={this.closeMenu} />
+        </div>
+    ) : null} -->
+</div>

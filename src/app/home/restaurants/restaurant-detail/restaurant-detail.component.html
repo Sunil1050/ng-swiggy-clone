@@ -1,0 +1,41 @@
+<div class="rest-details-container">
+    <app-header></app-header>
+    <div class="rest-details-responsive-box" *ngIf="!isLoading; else loader">
+        <div class="rest-banner-box">
+            <div class="rest-image-details">
+                <img [src]="restaurantDetail.image_url" alt="rest-banner" class="rest-d-image" />
+                <div class="rest-d-details">
+                    <h1 class="rest-d-name">{{ restaurantDetail.name }}</h1>
+                    <h5 class="rest-d-cuisine">{{ restaurantDetail.cuisine }}</h5>
+                    <h4 class="rest-d-location">{{ restaurantDetail.location }}</h4>
+                    <div class="rest-d-rating-costfortwo-box">
+                        <div class="rest-review-rating-box">
+                            <div class="rest-d-rating-box">
+                                <i class="bi bi-star-fill" [style]="{color: '#ffffff'}"></i>
+                                <h4 class="rest-d-rating">{{ restaurantDetail.rating }}</h4>
+                            </div>
+                            <h4 class="rest-d-reviews-count">{{ restaurantDetail.reviews_count }}+ Ratings</h4>
+                        </div>
+                        <h1 class="rest-d-separation-pipe">|</h1>
+                        <div class="rest-d-costfortwo-box">
+                            <h3 class="rest-d-costfortwo-amount">
+                                <i class="bi bi-currency-rupee"></i>
+                                {{ restaurantDetail.cost_for_two }}
+                            </h3>
+                            <h5 class="rest-d-costfortwo-text">Cost for two</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="food-items-container">
+            <app-food-item *ngFor="let foodItem of restaurantDetail.food_items" [foodItem]="foodItem"></app-food-item>
+            <!-- <FoodItem foodItemDetails={e} restaurantName={name} key={e.id} /> -->
+        </ul>
+    </div>
+    <ng-template #loader>
+        <div class="rest-detail-loader-view">
+            <app-loader></app-loader>
+        </div>
+    </ng-template>
+</div>

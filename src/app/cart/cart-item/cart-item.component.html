@@ -1,0 +1,37 @@
+<li class='cart-item'>
+    <div class='image-name-box'>
+        <img [src]="cartItem.image_url" alt="cart-img" class='cart-item-image' />
+        <div [style]="{display: 'flex', flexDirection: 'column',margin: '0px', marginLeft: '10px'}">
+            <h2 class='cart-item-name'>{{ cartItem.name }}</h2>
+        </div>
+    </div>
+    <div class='quantity-box'>
+        <button type="button" (click)="onDecrease()" [style]="{border: 0, background: 'transparent'}" [disabled]="quantity == 1">
+            <i class=" bi bi-dash-square add-buttons"></i>
+        </button>
+        <h4 class='cart-item-quantity'>{{ cartItem.quantity }}</h4>
+        <button type="button" (click)="onIncrease()" [style]="{border: 0, background: 'transparent'}">
+            <i class="bi bi-plus-square add-buttons"></i>
+        </button>
+    </div>
+    <div class='cart-price-box'>
+        <h1 class='cart-item-price'>
+            <i class="bi bi-currency-rupee"></i>
+            {{ cartItem.quantity * cartItem.cost }}
+        </h1>
+    </div>
+    <img [src]="cartItem.image_url" alt="cart img" class='mob-cart-item-image' />
+    <div class='cart-item-details'>
+        <h1 class='cart-item-name'>{{ cartItem.name }}</h1>
+        <!-- <h5 class='cart-item-rest-name'>from  {restaurantName}</h5> -->
+        <div class='mob-cart-quantity-box'>
+            <i class="bi bi-dash-square add-buttons" (click)="onDecrease()"></i>
+            <h4 class='cart-item-quantity'>{{ cartItem.quantity }}</h4>
+            <i class="bi bi-plus-square add-buttons" (click)="onIncrease()"></i>
+        </div>
+        <h1 class='cart-item-price'>
+            <i class="bi bi-currency-rupee"></i>
+            {{ cartItem.quantity * cartItem.cost }}
+        </h1>
+    </div>
+</li>

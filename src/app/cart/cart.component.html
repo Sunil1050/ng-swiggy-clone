@@ -1,0 +1,40 @@
+<div class="cart-container">
+    <app-header></app-header>
+    <div class="cart-responsive-box">
+        <!-- NO CART ITEMS VIEW -->
+        <div class="empty-cart-box" *ngIf="cartList.length === 0; else cartView">
+            <img src="../../assets/IMG/NoCartView.png" alt="no cart view" class="bowl-image" />
+            <h2 class="no-orders-text">No Orders Yet!</h2>
+            <p class="cart-empty-text">Your cart is empty. Add somthing from the menu.</p>
+            <button class='order-btn' (click)="onOrderNow()">Order Now</button>
+        </div>
+        <!-- CART ITEMS VIEW -->
+        <ng-template #cartView>
+            <div class="cart-items-box">
+                <div class="t-header my-3">
+                    <h1 class="t-h-item">Item</h1>
+                    <h1 class="t-h-item">Quantity</h1>
+                    <h1 class="t-h-item">Price</h1>
+                </div>
+                <ul class="cart-items-list">
+                    <app-cart-item *ngFor="let cartItem of cartList" [cartItem]=cartItem></app-cart-item>
+                    <hr class="cart-items-line" />
+                </ul>
+                <hr [style]="{border: '1px dashed red', width: '95%'}" />
+                <div class="total-price-box">
+                    <h1 class="order-total-text">Order Total:</h1>
+                    <div class="box">
+                        <h1 class="total-price">
+                            <i class="bi bi-currency-rupee"></i>
+                            {{ finalPrice }}
+                        </h1>
+                    </div>
+                </div>
+                <div class="plaord-ref-btn-box">
+                    <button class="place-order-btn" (click)="onPlaceOrder()">Place Order</button>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </ng-template>
+    </div>
+</div>

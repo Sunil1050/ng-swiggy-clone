@@ -1,0 +1,45 @@
+<li class="food-item">
+    <img [src]="foodItem.image_url" alt="food item" class="food-item-image" />
+    <div class="food-item-details">
+        <h3 class="food-item-name">{{ foodItem.name }}</h3>
+        <h4 class="food-item-cost">
+            <i class="bi bi-currency-rupee"></i>
+            {{ foodItem.cost }}
+        </h4>
+        <h3 class="food-item-rating">
+            <i class="bi bi-star-fill star"></i>
+            <!-- <AiFillStar class="star" /> -->
+            {{ foodItem.rating }}
+        </h3>
+        <button class="add-item-btn" (click)="onAddToCart()" *ngIf="!isAdded; else addBox">ADD</button>
+        <ng-template #addBox>
+            <div class='add-btn-box'>
+                <div class="add-box">
+                    <i class="bi bi-dash-square add-buttons" (click)="onDecrease()"></i>
+                    <span class="food-quantity">{{ quantity }}</span>
+                    <i class="bi bi-plus-square add-buttons" (click)="onIncrease()"></i>
+                </div>
+            </div>
+        </ng-template>
+        <!-- {this.state.quantity > 0 ? (
+            <div class='add-btn-box'>
+                <div class="add-box">
+                    <AiOutlineMinusSquare class="add-buttons" onClick={this.onDecrease} />
+                    <span class="food-quantity">{this.state.quantity}</span>
+                    <AiOutlinePlusSquare class="add-buttons" onClick={this.onIncrease} />
+                </div>
+                <button class="add-item-btn" onClick={onAddItem} disabled={this.state.open}>ADD</button>
+            </div>
+        ) : (<button class="add-item-btn" onClick={onToggle}>ADD</button>)} -->
+        <!-- <Snackbar
+            open={this.state.open}
+            autoHideDuration={6000}
+            onClose={this.handleClose}
+            message="Item Added to Cart"
+            action={action}
+            anchorOrigin={{vertical, horizontal}}
+            key={vertical + horizontal}
+            severity="success"
+        /> -->
+    </div>
+</li>

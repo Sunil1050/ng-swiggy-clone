@@ -1,0 +1,12 @@
+.restaurants-box {
+    width: 100%;
+}
+
+.restaurants-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 0;
+    /* list-style-type: none; */
+    flex-wrap: wrap;
+}

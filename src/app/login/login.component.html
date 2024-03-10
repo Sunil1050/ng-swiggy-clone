@@ -1,0 +1,33 @@
+<div class='login-container'>
+    <div class='login-form-container'>
+        <div background-img="../../assets/IMG/LoginImgMob.png" class='mob-img'>
+            <h1 class='login-text-mob'>Login</h1>
+        </div>
+        <form class='login-form' #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <img src="../../assets/IMG/AppLogo.png" alt="App Logo" class='app-logo' />
+            <h1 class='app-title'>Tasty Kitchens</h1>
+            <h1 class='login-text'>Login</h1>
+            <div [style]="{display: 'flex', flexDirection: 'column'}">
+                <label class='form-label' for='USERNAME'>USERNAME</label>
+                <input type="text" class='form-input' id="USERNAME" ngModel name="username" #username="ngModel"
+                    required />
+                <span *ngIf="!username.valid && username.touched" [style]="{color: 'red', fontSize: '14px'}">*username
+                    is
+                    required !</span>
+                <label class='form-label' for='PASSWORD'>PASSWORD</label>
+                <input type="password" class='form-input' id="PASSWORD" ngModel name="password" required
+                    #password="ngModel" />
+                <span *ngIf="!password.valid && password.touched" [style]="{color: 'red', fontSize: '14px'}">*password
+                    is
+                    required !</span>
+                <button type='submit' class='login-btn'>Login</button>
+                <!-- {this.state.isError ? (<p class='login-err-msg'>*{this.state.errorMsg}</p>) : null} -->
+            </div>
+
+        </form>
+    </div>
+    <img src="../../assets/IMG/LoginImg.png" alt="" class='login-img' />
+</div>
+
+<!-- onChange={this.onChangeUserName} 
+onChange={this.onChangePassword}  -->
