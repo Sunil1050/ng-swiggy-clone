@@ -41,6 +41,12 @@ export class CartService {
     this.cartListChanged.next(this.cartList.slice());
   }
 
+  removeCartItem(cartItem: CartItem) {
+    this.cartList = this.cartList.filter(item => item.id !== cartItem.id);
+    return this.cartList;
+    // this.cartListChanged.next(this.cartList.slice());
+  }
+
   emptyCartList() {
     this.cartList = [];
     this.cartListChanged.next(this.cartList.slice());

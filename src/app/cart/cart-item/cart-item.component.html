@@ -20,6 +20,7 @@
             {{ cartItem.quantity * cartItem.cost }}
         </h1>
     </div>
+    <app-modal [cartItem]="cartItem"></app-modal>
     <img [src]="cartItem.image_url" alt="cart img" class='mob-cart-item-image' />
     <div class='cart-item-details'>
         <h1 class='cart-item-name'>{{ cartItem.name }}</h1>

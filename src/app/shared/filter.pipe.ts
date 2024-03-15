@@ -6,7 +6,6 @@ import { Restaurant } from '../home/restaurants/restaurant.model';
 })
 export class FilterPipe implements PipeTransform {
   transform(value: Restaurant[], searchText: string): any[] {
-    console.log('At FIlterPipe: ', searchText);
     if (!value) {
       return [];
     }

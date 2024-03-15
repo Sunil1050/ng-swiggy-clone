@@ -25,3 +25,10 @@
     border: 1px solid #F7931E;
     transition: 0.3s ease-in-out;
 }
+
+.delete-btn {
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    margin-right: 30px;
+}

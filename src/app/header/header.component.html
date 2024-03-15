@@ -16,23 +16,7 @@
                     <span *ngIf="cartList.length > 0">{{ cartList.length }}</span>
                 </li>
             </ul>
-            <app-modal></app-modal>
-            <!-- <Popup
-                modal
-                class="popup-content"
-                trigger={
-                    <button class='logout-btn'>Logout</button>
-                }>
-                {close => (
-                    <div class='logout-popup-box'>
-                        <h2 class='are-you-sure-text'>Are you sure you want to Logout?</h2>
-                        <div class='buttons-box'>
-                            <button class='btn cancel' onClick={() => close()}>Cancel</button>
-                            <button class='btn confirm' onClick={this.onLogout}>Confirm</button>
-                        </div>
-                    </div>
-                )}
-            </Popup> -->
+            <app-modal [modalType]="'header'"></app-modal>
         </div>
     </div>
     <div class='mob-nav'>
