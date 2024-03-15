@@ -3,16 +3,15 @@
 }
 
 .cart-item {
-    list-style-type: none;
+    /* list-style-type: none; */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
     box-shadow: 0px 1px 4px rgba(7, 7, 7, 0.08);
     border-radius: 5px;
-    /* padding: 0px 20px; */
     /* border: 1px solid blue; */
 }
 
@@ -60,7 +59,6 @@
     width: 33%;
     margin: 0;
     padding-right: 30px;
-    /* border: 1px solid pink; */
 }
 
 .add-buttons {

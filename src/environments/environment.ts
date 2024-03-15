@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  RAZORPAY_KEY: 'rzp_test_wX45pt5C4HP3x8'
 };
 
 /*

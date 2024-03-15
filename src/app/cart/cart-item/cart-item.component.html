@@ -6,7 +6,8 @@
         </div>
     </div>
     <div class='quantity-box'>
-        <button type="button" (click)="onDecrease()" [style]="{border: 0, background: 'transparent'}" [disabled]="quantity == 1">
+        <button type="button" (click)="onDecrease()" [style]="{border: 0, background: 'transparent'}"
+            [disabled]="quantity == 1">
             <i class=" bi bi-dash-square add-buttons"></i>
         </button>
         <h4 class='cart-item-quantity'>{{ cartItem.quantity }}</h4>
