@@ -32,9 +32,12 @@ export class AuthService {
 
   handleAuthentication(response: { jwt_token: string }) {
     if (response.hasOwnProperty('jwt_token')) {
-      const loggedInUser = Object.assign({}, response);
+      const expirationDate = new Date(new Date().getTime() + 600 * 1000); // Set expiration to ten minute
+      const loggedInUser = { ...response, expirationDate };
       this.user.next(loggedInUser);
       localStorage.setItem('user', JSON.stringify(loggedInUser));
+
+      this.autoLogout(600); // 10 minutes
     }
   }
 
@@ -44,5 +47,11 @@ export class AuthService {
         return;
       }
       this.user.next(loadedUser);
+  }
+
+  private autoLogout(expirationSeconds: number) {
+    setTimeout(() => {
+      this.logoutUser();
+    }, expirationSeconds * 1000);
   }
 }
