@@ -25,4 +25,14 @@ export class DataStorageService {
   getRestaurantDetails(restId: number) {
     return this.http.get<RestaurantDetail>(`https://apis.ccbp.in/restaurants-list/${restId}`);
   }
+
+  //RAZOR PAY INTEGRATION
+  getOrderDetails(totalPrice: number) {
+    return this.http.post<{order_id: string, currency: string, amount: number}>('http://localhost:1234/order', {
+      amount: totalPrice,
+      currency: 'INR',
+      receipt: "any unique id for every order",
+      payment_capture: 1
+    })
+  }
 }
