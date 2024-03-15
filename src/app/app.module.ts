@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { ModalComponent } from './header/modal/modal.component';
+import { ModalComponent } from './modal/modal.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { RestaurantsComponent } from './home/restaurants/restaurants.component';
 import { RestaurantItemComponent } from './home/restaurants/restaurant-item/restaurant-item.component';
