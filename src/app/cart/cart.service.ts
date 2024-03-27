@@ -9,7 +9,9 @@ export class CartService {
   cartList: CartItem[] = [];
   cartListChanged = new Subject<CartItem[]>();
 
-  constructor() {}
+  constructor() {
+    console.log('Cart Service Instantiated !!');
+  }
 
   getCartItems() {
     return this.cartList.slice();
